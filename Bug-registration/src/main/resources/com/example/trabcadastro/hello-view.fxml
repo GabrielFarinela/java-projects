@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trabcadastro.HelloController">
+   <children>
+      <Button fx:id="buttonCancelar" layoutX="745.0" layoutY="554.0" mnemonicParsing="false" onAction="#close" text="Cancelar" />
+      <Button fx:id="buttonOk" layoutX="699.0" layoutY="554.0" mnemonicParsing="false" onAction="#openDialog" text="OK" />
+      <Label layoutX="301.0" layoutY="14.0" text="Cadastro de Bugs">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="112.0" text="Nome" />
+      <Label layoutX="104.0" layoutY="149.0" text="Email" />
+      <Label layoutX="97.0" layoutY="184.0" text="Sistema" />
+      <Label layoutX="103.0" layoutY="219.0" text="Título" />
+      <Label layoutX="92.0" layoutY="256.0" text="Descrição" />
+      <TextField layoutX="212.0" layoutY="108.0" prefHeight="25.0" prefWidth="595.0" />
+      <TextField layoutX="212.0" layoutY="145.0" prefHeight="25.0" prefWidth="595.0" />
+      <TextField layoutX="212.0" layoutY="215.0" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="711.0" layoutY="184.0" text="Prioridade" />
+      <ComboBox fx:id="comboBoxSistema" layoutX="212.0" layoutY="180.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBoxPrioridade" layoutX="657.0" layoutY="215.0" prefWidth="150.0" />
+      <TextArea layoutX="212.0" layoutY="282.0" prefHeight="154.0" prefWidth="595.0" />
+      <Label layoutX="144.0" layoutY="475.0" text="Deseja receber atualizações sobre o bug?" />
+      <CheckBox layoutX="612.0" layoutY="475.0" mnemonicParsing="false" text="Sim" />
+      <CheckBox layoutX="732.0" layoutY="475.0" mnemonicParsing="false" text="Não" />
+   </children>
+</AnchorPane>
