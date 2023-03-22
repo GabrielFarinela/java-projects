@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inserirController">
+   <children>
+      <Button fx:id="buttonInserir" layoutX="216.0" layoutY="388.0" mnemonicParsing="false" onAction="#insereMovimentacao" prefHeight="36.0" prefWidth="231.0" style="-fx-background-radius: 100;" text="INSERIR" />
+      <Label alignment="CENTER" layoutX="111.0" layoutY="78.0" prefHeight="53.0" prefWidth="430.0" text="INSERIR MOVIMENTAÇÃO">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="170.0" prefHeight="17.0" prefWidth="35.0" text="TIPO:" />
+      <Label layoutX="89.0" layoutY="229.0" text="CATEGORIA:" />
+      <Label fx:id="LabelErroLogin" alignment="CENTER" layoutX="128.0" layoutY="451.0" prefHeight="27.0" prefWidth="336.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonVoltar" layoutX="217.0" layoutY="430.0" mnemonicParsing="false" onAction="#trocarParaMain" prefHeight="36.0" prefWidth="231.0" style="-fx-background-radius: 100;" text="VOLTAR" />
+      <Label layoutX="89.0" layoutY="283.0" text="VALOR:" />
+      <Label layoutX="295.0" layoutY="170.0" text="DESCRIÇÃO:" />
+      <TextArea fx:id="descricaoTextArea" layoutX="295.0" layoutY="187.0" prefHeight="83.0" prefWidth="270.0" promptText="descreva se necessário..." />
+      <DatePicker fx:id="dataPicker" layoutX="294.0" layoutY="300.0" />
+      <Label layoutX="294.0" layoutY="283.0" text="DATA:" />
+      <TextField fx:id="textFieldTipo" layoutX="89.0" layoutY="187.0" />
+      <TextField fx:id="textFieldCategoria" layoutX="89.0" layoutY="245.0" />
+      <TextField fx:id="textFieldValor" layoutX="89.0" layoutY="300.0" />
+      <Label layoutX="494.0" layoutY="283.0" text="PAGO:" />
+      <CheckBox fx:id="CBsim" layoutX="544.0" layoutY="283.0" mnemonicParsing="false" selected="true" text="SIM" />
+      <CheckBox fx:id="CBnao" layoutX="544.0" layoutY="304.0" mnemonicParsing="false" text="NÃO" />
+      <Label layoutX="488.0" layoutY="513.0" prefHeight="17.0" prefWidth="160.0" text="1-Receitas  2-Despesas" />
+      <Label layoutX="488.0" layoutY="490.0" prefHeight="17.0" prefWidth="35.0" text="TIPOS:" textFill="#f80000" />
+      <Label layoutX="488.0" layoutY="350.0" text="CATEGORIAS:" textFill="RED" />
+      <Label layoutX="488.0" layoutY="362.0" prefHeight="136.0" prefWidth="160.0" text="1-Alimentação  2-Educação  3-Esportes  4-Lazer  5-Moradia  6-Outros  7-Presentes  8-Roupas  9-Salário  10-Saúde  11-Transporte  12-Viagem" wrapText="true" />
+   </children>
+</AnchorPane>

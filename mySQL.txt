@@ -1,0 +1,48 @@
+DROP SCHEMA financas;
+
+CREATE SCHEMA financas;
+
+USE financas;
+
+CREATE TABLE `categoria` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `categoria` (`id`, `descricao`) VALUES (1,'Alimentação'),(2,'Educação'),(3,'Esportes'),(4,'Lazer'),(5,'Moradia'),(6,'Outros'),(7,'Presentes'),(8,'Roupas'),(9,'Salário'),(10,'Saúde'),(11,'Transporte'),(12,'Viagem');
+
+CREATE TABLE `tipos_movimentacao` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR (50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `tipos_movimentacao` (`id`, `descricao`) VALUES (1,'Receita'),(2,'Despesa');
+
+CREATE TABLE `movimentacao` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tipo` INT NOT NULL,
+  `categoria` INT NOT NULL,
+  `data` DATE NOT NULL,
+  `valor` INT NOT NULL,
+  `descricao` VARCHAR(50) DEFAULT NULL,
+  `pago` BOOLEAN NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_movimentacao_1_idx` (`tipo`),
+  KEY `fk_categoria_idx` (`categoria`),
+  CONSTRAINT `fk_categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tipo` FOREIGN KEY (`tipo`) REFERENCES `tipos_movimentacao` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+INSERT INTO `movimentacao` (`tipo`, `categoria`, `data`, `valor`, `pago`) VALUES (1, 9, now(), 5000, true);
+INSERT INTO `movimentacao` (`tipo`, `categoria`, `data`, `valor`, `pago`) VALUES (2, 11, now(), -1000, true);
+INSERT INTO `movimentacao` (`tipo`, `categoria`, `data`, `valor`, `pago`) VALUES (1, 4, now(), 2400, true);
+
+CREATE TABLE `usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL UNIQUE,
+  `senha` VARCHAR(6) NOT NULL,
+  PRIMARY KEY (`id`));
+  
+INSERT INTO `usuario` (nome, senha) VALUES ('teste','1234');
